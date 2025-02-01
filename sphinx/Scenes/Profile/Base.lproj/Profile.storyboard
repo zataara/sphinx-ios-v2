@@ -858,7 +858,7 @@
                                             <action selector="backbuttonTouched" destination="54b-ve-hAY" eventType="touchUpInside" id="wJH-QI-Xgn"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41O-R2-bE7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILEs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41O-R2-bE7">
                                         <rect key="frame" x="176.5" y="14.5" width="61" height="17"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" name="Text"/>
@@ -917,6 +917,28 @@
                                             <constraint firstAttribute="height" constant="30" id="eb1-Qa-JfZ"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-stack">
+                                        <rect key="frame" x="142" y="122" width="257" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="America/Argentina/Buenos_Aires" textAlignment="natural" lineBreakMode="tail" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-tz-id">
+                                                <rect key="frame" x="0.0" y="0.0" width="257" height="15"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                                <color key="textColor" name="SecondaryText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024-01-14 14:16:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-dt-lbl">
+                                                <rect key="frame" x="0.0" y="18" width="257" height="15"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                                <color key="textColor" name="SecondaryText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xyz-stack" firstAttribute="leading" secondItem="tp9-ql-cuL" secondAttribute="trailing" constant="25" id="abc-tz-123"/>
+                                            <constraint firstItem="xyz-stack" firstAttribute="top" secondItem="B43-2h-mk8" secondAttribute="bottom" constant="12" id="xyz-top-1"/>
+                                            <constraint firstAttribute="trailing" secondItem="xyz-stack" secondAttribute="trailing" constant="15" id="xyz-trail-1"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="Body"/>
                                 <constraints>
@@ -926,7 +948,7 @@
                                     <constraint firstItem="41O-R2-bE7" firstAttribute="centerX" secondItem="36z-hJ-x0i" secondAttribute="centerX" id="7bW-um-ARO"/>
                                     <constraint firstItem="tp9-ql-cuL" firstAttribute="top" secondItem="36z-hJ-x0i" secondAttribute="top" constant="65" id="97E-Ra-CLt"/>
                                     <constraint firstItem="TLW-gt-xsn" firstAttribute="leading" secondItem="tp9-ql-cuL" secondAttribute="trailing" constant="25" id="9XC-E5-pQ7"/>
-                                    <constraint firstItem="B43-2h-mk8" firstAttribute="bottom" secondItem="tp9-ql-cuL" secondAttribute="bottom" constant="-5" id="CA0-Kw-PN4"/>
+                                    <constraint firstItem="B43-2h-mk8" firstAttribute="bottom" secondItem="tp9-ql-cuL" secondAttribute="bottom" constant="-20" id="CA0-Kw-PN4"/>
                                     <constraint firstItem="f0w-2Q-7Tc" firstAttribute="leading" secondItem="tp9-ql-cuL" secondAttribute="leading" id="E5h-TD-R4z"/>
                                     <constraint firstItem="B43-2h-mk8" firstAttribute="leading" secondItem="tp9-ql-cuL" secondAttribute="trailing" constant="26" id="Gbo-Dq-LSe"/>
                                     <constraint firstItem="i7K-ee-ecS" firstAttribute="top" secondItem="tp9-ql-cuL" secondAttribute="top" id="H9Q-z6-PsC"/>
@@ -1019,6 +1041,8 @@
                         <outlet property="viewTitle" destination="41O-R2-bE7" id="VPz-7J-6Fg"/>
                         <outletCollection property="tabContainers" destination="l9e-k6-7m9" collectionClass="NSMutableArray" id="R77-lc-kIZ"/>
                         <outletCollection property="tabContainers" destination="W3p-W4-OyK" collectionClass="NSMutableArray" id="aR0-4W-QKq"/>
+                        <outlet property="timezoneIdentifierLabel" destination="xyz-tz-id" id="tz-id-1"/>
+                        <outlet property="dateTimeLabel" destination="xyz-dt-lbl" id="dt-lbl-1"/>
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="uQ5-92-gBu">
@@ -1400,7 +1424,7 @@
                             <constraint firstItem="aZn-Kj-YV3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DzR-Mi-Rn7" secondAttribute="trailing" constant="8" symbolic="YES" id="MR2-Ub-ZoT"/>
                             <constraint firstItem="aZn-Kj-YV3" firstAttribute="top" secondItem="Fvo-5a-xTT" secondAttribute="bottom" constant="2" id="OAZ-yi-8km"/>
                             <constraint firstItem="m9b-2o-0MK" firstAttribute="top" secondItem="tn4-X7-Dcd" secondAttribute="bottom" id="QCX-fV-3db"/>
-                            <constraint firstItem="h59-t6-zfg" firstAttribute="top" secondItem="MBC-sr-yDr" secondAttribute="bottom" constant="20" id="QhP-dQ-dvm"/>
+                            <constraint firstItem="h59-t6-zfg" firstAttribute="top" secondItem="MBC-sr-yDr" secondAttribute="bottom" constant="15" id="QhP-dQ-dvm"/>
                             <constraint firstItem="4T3-f8-3JX" firstAttribute="leading" secondItem="R4S-en-fKP" secondAttribute="leading" constant="16" id="SK7-3B-a1H"/>
                             <constraint firstItem="tn4-X7-Dcd" firstAttribute="leading" secondItem="1Ap-Ee-cOT" secondAttribute="leading" id="Sn5-tI-Cew"/>
                             <constraint firstItem="Fvo-5a-xTT" firstAttribute="leading" secondItem="1Ap-Ee-cOT" secondAttribute="leading" id="TOb-Yo-dQI"/>
@@ -1423,7 +1447,7 @@
                             <constraint firstItem="7C5-MF-uCe" firstAttribute="centerX" secondItem="R4S-en-fKP" secondAttribute="centerX" id="mHk-8l-GOQ"/>
                             <constraint firstItem="h59-t6-zfg" firstAttribute="centerX" secondItem="R4S-en-fKP" secondAttribute="centerX" id="pBg-fM-zta"/>
                             <constraint firstItem="ojg-wh-9EL" firstAttribute="top" secondItem="R4S-en-fKP" secondAttribute="top" id="pI0-B7-pq4"/>
-                            <constraint firstItem="bTv-6h-5tO" firstAttribute="centerX" secondItem="h59-t6-zfg" secondAttribute="centerX" id="pVB-v8-WYo"/>
+                            <constraint firstItem="bTv-6h-5tO" firstAttribute="centerY" secondItem="h59-t6-zfg" secondAttribute="centerY" id="pVB-v8-WYo"/>
                             <constraint firstAttribute="trailing" secondItem="Fvo-5a-xTT" secondAttribute="trailing" id="psx-8D-oGp"/>
                             <constraint firstItem="R4S-en-fKP" firstAttribute="trailing" secondItem="Na3-Le-Hwn" secondAttribute="trailing" constant="46" id="qhg-h8-UXL"/>
                             <constraint firstItem="myU-eK-pqV" firstAttribute="trailing" secondItem="MBC-sr-yDr" secondAttribute="trailing" id="rPB-SJ-lc9"/>
